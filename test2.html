@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+#dialog-background {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,.3);
+    z-index: 10;
+}
+#my-dialog {
+    display: none;
+    position: fixed;
+    left: calc( 50% - 160px ); top: calc( 50% - 70px );
+    width: 320px; height: 140px; 
+    background: #fff;
+    z-index: 11;
+    padding: 10px;
+}
+</style>
+<script src='http://code.jquery.com/jquery.min.js'></script>
+<script>
+$(function(){
+	$("#btn-open-dialog,#dialog-background,#btn-close-dialog").click(function () {
+		$("#my-dialog,#dialog-background").toggle();
+	});
+});
+</script>
+</head>
+<body>
+
+간단한 모달창 <button id="btn-open-dialog">창 열기</button>
+
+<div id="my-dialog">
+    창 내용
+    <button id="btn-close-dialog">창 닫기</button>
+</div>
+<div id="dialog-background"></div>
+</body>
+</html>
